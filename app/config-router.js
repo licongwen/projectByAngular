@@ -1,0 +1,102 @@
+'use strict'
+var app=angular.module('app')
+	.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
+	
+	$urlRouterProvider.otherwise('/access/login');
+
+	$stateProvider
+		.state('access',{
+			url:'/access',
+			template:'<div data-ui-view></div>'
+		})
+		.state('access.login',{
+			url:'/login',
+			templateUrl:'app/login/login.html',
+			controller:'loginController',
+			cache:false,
+	       	resolve: {
+	            deps: ['uiLoad', function(uiLoad) {
+	            	 return uiLoad.load('app/login/loginController.js');
+	            }]
+	        }
+		})
+		.state('main',{
+			abstract:true,
+			template:'<div data-ui-view></div>'
+		})
+		.state('main.index',{
+			url:'/index',
+			templateUrl:'app/index/index.html',
+			controller:'indexController',
+			resolve:{
+				index:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/index/indexController.js');
+				}]
+			}
+		})
+		.state('main.index.home',{
+			url:'/home',
+			templateUrl:'app/home/home.html',
+			controller:'homeController',
+			params:{'account':null},
+			resolve:{
+				deps:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/home/homeController.js');
+				}]
+			}
+		})
+		.state('main.index.text',{
+			url:'/text',
+			templateUrl:'app/text/text.html',
+			controller:'textController',
+			resolve:{
+				text:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/text/textController.js')
+				}]
+			}
+		})
+		.state('main.index.photo',{
+			url:'/photo',
+			templateUrl:'app/photo/photo.html',
+			controller:'photoController',
+			resolve:{
+				photo:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/photoController.js')
+				}]
+			}
+		})
+		.state('main.index.classtable',{
+			url:'/classtable',
+			templateUrl:'app/classtable/classtable.html',
+			controller:'classtableController',
+			resolve:{
+				deps:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/classtable/classtableController.js')
+				}]
+			}
+
+		})
+}])
+.controller('headerControl',['$rootScope','$scope','$http','$translate','$state',function($rootScope,$scope,$http,$translate,$state){
+	
+	if(window.localStorage.lang!="undefined"){
+			$translate.use(window.localStorage.lang);
+			$scope.lang = window.localStorage.lang;
+    	}else{
+    		$translate.use('en');
+    		$scope.lang = 'en';
+    	}
+		$scope.switchLanguage=function(local){
+
+			$translate.use(local);
+			window.localStorage.lang=local;
+			$scope.lang = local;
+		}
+		
+		$scope.goToLogin=function(){
+			$rootScope.account='';
+			window.sessionStorage.removeItem('account');
+		}
+
+		
+}])

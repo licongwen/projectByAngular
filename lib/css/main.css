@@ -1,0 +1,101 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	width:100%;
+	height:100%;
+	/*background-image: url(../../res/img/login-bg.jpg);*/
+
+
+}
+/*登录框上下左右居中*/
+#login{
+	
+	width:500px;
+	height:500px;
+	margin-top: 100px;
+	margin: 0 auto;
+}
+#login input{
+	height:40px;
+}
+#login .login-link,.form-signin-heading{
+	text-align: center;
+	display: block;
+	margin-top: 10px;
+	font-size: 14px;
+}
+#login .form-signin-heading{
+	font-size: 30px;
+	color:#337ab7;
+}
+#login .center{
+	text-align: center;
+	margin-top:50px;
+}
+#english,#chinese{
+	cursor: pointer;
+}
+/*底部footer*/
+#foot{
+	background: #333;
+	width: 100%;
+	height: 70px;
+	position: fixed;
+	bottom: 0px;
+}
+#c-div1{
+	margin-left: 100px;
+	margin-top: 30px;
+	width: 100%;
+}
+#c-div1 li{
+	list-style: none;
+	color: #a9b8ca;
+	float: left;
+	height: 20px;
+	
+	margin-left: 10px;
+}
+#c-div1 a{
+	text-decoration: none;
+	color: #a9b8ca;
+}
+#c-div1 a:hover{
+	color: #fff;
+}
+#c-div2{
+	
+	width: 331px;
+	height: 142px;
+	border-left: solid 1px #a9b8ca;
+}
+#c-div2 ul{
+	margin-right: 52px;
+	width: 400px;
+	height: 46px;
+	
+}
+#c-div2 li{
+	width: 58px;
+	height: 14px;
+	float: left;
+	margin-left: 10px;
+	margin-bottom: 20px;
+	
+}
+#c-div2 a:hover{
+	color: #fff;
+}
+#c-div2 a{
+	text-decoration: none;
+	color: #a9b8ca;
+}
+#c-div2 p{
+	margin-top: 30px;
+	width: 300px;
+	height: 76px;
+	margin-left: 52px;
+	color: #a9b8ca;
+}

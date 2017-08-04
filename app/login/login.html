@@ -1,0 +1,31 @@
+
+	<!-- <header class="header minwidth">
+		<a href="gw.html" class="pull-left"><img
+			src="#" height="59" alt=""></a> <a
+			href="gw.html" class="pull-left two-logo"><img
+			src="#" height="59" alt=""> </a>
+		<div class="english-ch pull-left">
+			[<a ng-class="{'active':lang==='en'}" id="english" ng-click="switchLanguage('en')">English</a>|<a ng-class="{'active':lang==='cn'}" id="chinese" ng-click="switchLanguage('cn')">中文</a>]
+		</div>
+		<div class="personal pull-right">
+			<a ui-sref="access.login"><i class="icon iconfont">&#xe602;</i>请登录</a> <a href="#"><i class="icon iconfont">&#xe624;</i>Home</a>
+	</div>
+</header> -->
+<div id="login">
+	<form class="login-form" ng-submit="login()">
+		<h2 class="form-signin-heading">Please LogIn</h2> 
+		<div class="form-group">
+			<input type="text" class="form-control login-field" ng-model="user.account" name="account" placeholder="Enter your account" ng-maxlength="20" autofocus="autofocus" required />
+			<label class="login-field-icon fui-user" for="account"></label>
+		</div>
+		<div class="form-group">
+			<input type="password" class="form-control login-field" ng-model="user.password"
+						name="password" placeholder="Password" ng-maxlength="20" required />
+			<label class="login-field-icon fui-lock" for="password"></label>
+		</div>
+		<button class="btn btn-primary btn-lg btn-block" id="btn-login" type="submit">Log in</button>
+		<a class="login-link" href="#">Lost your password?</a>
+		<div class="has-error center"><label class="control-label">{{msg}}</label></div>
+	</form>
+</div>
+<footer class="footer" data-ng-include=" 'tpl/footer.html' "></footer>

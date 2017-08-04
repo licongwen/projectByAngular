@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Li</title>
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap-table/bootstrap-table.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-editable.css">
+	<!--Loading CSS-->
+	<link rel="stylesheet" type="text/css" href="lib/css/public.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/main.css">
+	<!--Loading jQuery-->
+	<script src="lib/jquery/jquery-1.9.1.min.js"></script>
+	<script src="lib/jquery/jquery.validate.min.js"></script>
+	<script src="lib/jquery/additional-methods.min.js"></script>
+	<!--Loading Angular-->
+	<script src="lib/angular/angular.min.js"></script>
+	<script src="lib/angular/ocLazyLoad.min.js"></script>
+	<script src="lib/angular/angular-sanitize.min.js"></script>
+	<script src="lib/angular/angular-ui-router.js"></script>
+	<script src="lib/angular/ui-load.js"></script>
+	<!-- Loading Bootstrap-table -->
+	<script src="lib/bootstrap/bootstrap.min.js"></script>
+	<script src="lib/bootstrap-table/bootstrap-table.js"></script>
+	<script src="lib/bootstrap-table/bootstrap-table-angular.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/bootstrap-editable.js"></script>
+	<script type="text/javascript" src="lib/bootstrap/bootstrap-table-editable.js"></script>
+	<!--Loading Angular Translate-->
+	<script src="lib/angular/angular-translate.min.js"></script>
+	<script src="lib/angular/angular-translate-loader-static-files.min.js"></script>
+	<!-- Loading plugin -->
+	<!-- <script src="lib/ui-select/select.js"></script>
+	<script src="lib/bootstrap-datetimepicker.js" ></script>
+	<script src="lib/bootstrap-datetimepicker.zh-CN.js"></script>
+	<script src="lib/upload/ng-file-upload-shim.min.js"></script>
+	<script src="lib/upload/ng-file-upload.min.js"></script> -->
+	<!--Loading App-->
+	<script src="app/main.js"></script>
+	<script src="app/config.js"></script>
+	<script src="app/config-router.js"></script>
+</head>
+<body data-ng-app='app' data-ng-controller='AppCtrl'>
+	<header class="header minwidth" data-ng-controller='headerControl'>
+		<a href="gw.html" class="pull-left"><img
+				src="#" height="59" alt=""></a> <a
+				href="gw.html" class="pull-left two-logo"><img
+				src="#" height="59" alt=""> </a>
+		<div class="english-ch pull-left">
+			[<a ng-class="{'active':lang==='en'}" id="english" ng-click="switchLanguage('en')">English</a>|<a ng-class="{'active':lang==='cn'}" id="chinese" ng-click="switchLanguage('cn')">中文</a>]
+		</div>
+		<div class="personal pull-right">
+			<a ng-click="goToLogin()" ui-sref='access.login'><i class="icon iconfont"  style="cursor:pointer;">&#xe602;</i>欢迎回来：{{userName
+					|| account}}</a> <a ng-click="goToLogin()" style="cursor:pointer;"><i class="icon iconfont">&#xe624;</i>注销</a>
+		</div>
+	</header>
+	<div data-ui-view>
+		loading....
+	</div>
+	
+</body>
+</html>
