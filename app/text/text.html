@@ -3,9 +3,18 @@
 		1111
 	</div>
 	<div class="col-md-8">
-		<ul>
-			<li><a href="http://blog.csdn.net/hnllc2012/article/details/50175545">有关ui-router传递参数的几种方式</a></li>
-			<li><a href="https://gxnotes.com/article/24414.html">`ui-router` $stateParams vs. $state.params</a></li>
+		<p class="text-title">文章分类</p>
+		<ul class="text">
+			<li>JavaScript</li>
+			<li>HTML</li>
+			<li>CSS</li>
+			<li>Angular1.x</li>
+			<li>HTTP</li>
+			<li>跨域问题</li>
+			<li>git</li>
+
+			<!-- <li><a href="http://blog.csdn.net/hnllc2012/article/details/50175545">有关ui-router传递参数的几种方式</a></li>
+			<li><a href="https://gxnotes.com/article/24414.html">`ui-router` $stateParams vs. $state.params</a></li> -->
 		</ul>
 	</div>
 	<div class="col-md-2">
@@ -14,14 +23,34 @@
 </div>
 
 <style type="text/css">
-	ul{
+	.text-title{
+		width: 100%;
+		text-align: center;
+		margin-top: 30px;
+		font-size: 20px;
+	}
+	.text{
 		
 		margin: 20px auto;
-		border:1px solid #333;
+		
 		border-radius: 5px;
+		overflow: hidden;
 	}
-	li{
+	.text li{
 		list-style: none;
 		margin:10px;
+		height:30px;
+		width:100px;
+		border: 1px solid #ccc;
+		display: block;
+		border-radius: 5px;
+		text-align: center;
+		line-height: 30px;
+		cursor:pointer;
+		float:left;
+	}
+	.text li:hover{
+		color: red;
+
 	}
 </style>

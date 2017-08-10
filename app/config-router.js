@@ -65,6 +65,47 @@ var app=angular.module('app')
 				}]
 			}
 		})
+		.state('main.index.suzhou',{
+			url:'/suzhou',
+			templateUrl:'app/photo/suzhou/suzhou.html',
+			controller:'suzhouController',
+			resolve:{
+				suzhou:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/suzhou/suzhouController.js')
+				}]
+			}
+		})
+		.state('main.index.balihe',{
+			url:'/balihe',
+			templateUrl:'app/photo/balihe/balihe.html',
+			controller:'baliheController',
+			resolve:{
+				balihe:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/balihe/baliheController.js')
+				}]
+			}
+		})
+		.state('main.index.lianyungang',{
+			url:'/lianyungang',
+			templateUrl:'app/photo/lianyungang/lianyungang.html',
+			controller:'lianyungangController',
+			resolve:{
+				lianyungang:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/lianyungang/lianyungangController.js')
+				}]
+			}
+		})
+		.state('main.index.wuhu',{
+			url:'/wuhu',
+			templateUrl:'app/photo/wuhu/wuhu.html',
+			controller:'wuhuController',
+			resolve:{
+				wuhu:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/wuhu/wuhuController.js')
+				}]
+			}
+		})
+		//
 		.state('main.index.classtable',{
 			url:'/classtable',
 			templateUrl:'app/classtable/classtable.html',
@@ -96,6 +137,7 @@ var app=angular.module('app')
 		$scope.goToLogin=function(){
 			$rootScope.account='';
 			window.sessionStorage.removeItem('account');
+			window.sessionStorage.removeItem('photoPassword');
 		}
 
 		
