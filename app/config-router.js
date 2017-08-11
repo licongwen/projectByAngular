@@ -2,7 +2,7 @@
 var app=angular.module('app')
 	.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
 	
-	$urlRouterProvider.otherwise('/access/login');
+	//$urlRouterProvider.otherwise('/access/login');
 
 	$stateProvider
 		.state('access',{
