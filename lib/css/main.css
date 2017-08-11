@@ -169,6 +169,36 @@ body{
 	font-family: "微软雅黑";
 }
 /*wuhu*/
+.wuhu{
+		margin:0;
+		padding: 0;
+	}
+	.wuhu img{
+		margin: 10px;
+		width:200px;
+		cursor:pointer;
+		
+	}
+	.wuhu .divHide{
+		background-color:#000;
+        opacity: .7;
+        filter:alpha(opacity=70);
+        position: fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        z-index: 10;	
+	}
+	.wuhu .image{
+		position: absolute;
+        z-index: 11;
+        left:24%;
+        top:55px;
+        width:auto;
+        cursor: pointer;
+	}
+/*photo*/
 .head{
 	width:100%;
 	text-align: center;
