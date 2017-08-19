@@ -105,6 +105,37 @@ var app=angular.module('app')
 				}]
 			}
 		})
+		.state('main.index.shanghai',{
+			url:'/shanghai',
+			templateUrl:'app/photo/shanghai/shanghai.html',
+			controller:"shanghaiController",
+			resolve:{
+				shanghai:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/shanghai/shanghaiController.js')
+				}]
+			}
+
+		})
+		.state('main.index.yangzhou',{
+			url:'/yangzhou',
+			templateUrl:'app/photo/yangzhou/yangzhou.html',
+			controller:'yangzhouController',
+			resolve:{
+				yangzhou:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/yangzhou/yangzhouController.js')
+				}]
+			}
+		})
+		.state('main.index.nanjing',{
+			url:'/nanjing',
+			templateUrl:'app/photo/nanjing/nanjing.html',
+			controller:'nanjingController',
+			resolve:{
+				nanjing:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/photo/nanjing/nanjingController.js')
+				}]
+			}
+		})
 		//
 		.state('main.index.classtable',{
 			url:'/classtable',

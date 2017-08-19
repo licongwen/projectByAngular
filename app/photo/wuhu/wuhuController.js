@@ -13,6 +13,7 @@ angular.module('app')
 			var oImg=document.createElement('img');
 				oImg.setAttribute('class','addImage');
 				oImg.src=this.getAttribute('src');
+				oImg.style.width="580px";
 			//console.log(oImg.src);
 			$('#divHide').append(oImg);
 
