@@ -12,7 +12,7 @@
         
         <div class="pull-right">
             <a ui-sref="main.index.home" class="btn btn-default">首页</a>
-            <a href="" class="btn btn-default">作品</a>
+            <a ui-sref="main.index.work" class="btn btn-default">作品</a>
             <a class="btn btn-default" ui-sref="main.index.text">好文欣赏</a>
             <a data-toggle="modal" data-target="#selectTableModal"  class="btn btn-default">照片墙</a>
             <a class="btn btn-default" ui-sref="main.index.classtable">我的课程表</a>
@@ -35,8 +35,8 @@
             </div>
             <div class="nav-bottom">
                 <p class="nav_links">
-                    <a href="/statichtml/lotterytrend/ssq/jbzs30.html">双色球走势图</a>
-                    |<a target="_blank" href="/staticHtml/help/playRules/ssq1.html">双色球玩法介绍</a></p>
+                    <a href="javascript:void(0)">双色球走势图</a>
+                    |<a href="javascript:void(0)">双色球玩法介绍</a></p>
             </div>
         </div>
         <div class="lottery_wrap">
@@ -354,7 +354,7 @@
                                                                                                class="fred">0</b> 元 </span>
                     </div>
                     <p class="sure">
-                        <input title="确认选号"  class="addbtn disabled" id="addToListBtn" ng-click="SureToSelect()">
+                        <input title="确认选号"  class="addbtn disabled" disabled id="addToListBtn" ng-click="SureToSelect()">
                         <a id="clearNumberBtn" href="javascript:void(0)" ng-click="clearAll()">清空全部</a>
                     </p>
                     <div class="ssq_entry">
@@ -769,11 +769,11 @@
                         <div class="prize_number_list" id="winnumber_list"><p issue="2017-042"
                                                                               awardt="2017-04-13 21:22:12"
                                                                               number="01,02,04,07,10,23,04"><span
-                                class="r_border">2017-042</span> <span class="qihao"><em class="red">01</em><em
+                                class="r_border">2017-04-2</span> <span class="qihao"><em class="red">01</em><em
                                 class="red">02</em><em class="red">04</em><em class="red">07</em><em class="red">10</em><em
                                 class="red">23</em><em class="blue">04</em></span></p>
                             <p class="gray" issue="2017-041" awardt="2017-04-11 21:21:36" number="04,10,13,15,22,27,04">
-                                <span class="r_border">2017-041</span> <span class="qihao"><em class="red">04</em><em
+                                <span class="r_border">2017-04-1</span> <span class="qihao"><em class="red">04</em><em
                                     class="red">10</em><em class="red">13</em><em class="red">15</em><em
                                     class="red">22</em><em class="red">27</em><em class="blue">04</em></span></p>
                             <p issue="2017-040" awardt="2017-04-09 21:21:19" number="15,19,23,28,29,33,04"><span
@@ -781,53 +781,33 @@
                                     class="red">19</em><em class="red">23</em><em class="red">28</em><em
                                     class="red">29</em><em class="red">33</em><em class="blue">04</em></span></p>
                             <p class="gray" issue="2017-039" awardt="2017-04-06 21:24:55" number="02,04,12,14,17,24,15">
-                                <span class="r_border">2017-039</span> <span class="qihao"><em class="red">02</em><em
+                                <span class="r_border">2017-03-9</span> <span class="qihao"><em class="red">02</em><em
                                     class="red">04</em><em class="red">12</em><em class="red">14</em><em
                                     class="red">17</em><em class="red">24</em><em class="blue">15</em></span></p>
                             <p issue="2017-038" awardt="2017-04-04 21:22:39" number="01,04,08,13,24,27,05"><span
-                                    class="r_border">2017-038</span> <span class="qihao"><em class="red">01</em><em
+                                    class="r_border">2017-03-8</span> <span class="qihao"><em class="red">01</em><em
                                     class="red">04</em><em class="red">08</em><em class="red">13</em><em
                                     class="red">24</em><em class="red">27</em><em class="blue">05</em></span></p>
                             <p class="gray" issue="2017-037" awardt="2017-04-02 21:25:27" number="11,15,20,22,25,30,05">
-                                <span class="r_border">2017-037</span> <span class="qihao"><em class="red">11</em><em
+                                <span class="r_border">2017-03-7</span> <span class="qihao"><em class="red">11</em><em
                                     class="red">15</em><em class="red">20</em><em class="red">22</em><em
                                     class="red">25</em><em class="red">30</em><em class="blue">05</em></span></p>
                             <p issue="2017-036" awardt="2017-03-30 21:18:47" number="01,02,05,10,24,27,15"><span
-                                    class="r_border">2017-036</span> <span class="qihao"><em class="red">01</em><em
+                                    class="r_border">2017-03-6</span> <span class="qihao"><em class="red">01</em><em
                                     class="red">02</em><em class="red">05</em><em class="red">10</em><em
                                     class="red">24</em><em class="red">27</em><em class="blue">15</em></span></p>
                             <p class="gray" issue="2017-035" awardt="2017-03-28 21:21:14" number="01,06,14,24,28,32,12">
-                                <span class="r_border">2017-035</span> <span class="qihao"><em class="red">01</em><em
+                                <span class="r_border">2017-03-5</span> <span class="qihao"><em class="red">01</em><em
                                     class="red">06</em><em class="red">14</em><em class="red">24</em><em
                                     class="red">28</em><em class="red">32</em><em class="blue">12</em></span></p>
                             <p issue="2017-034" awardt="2017-03-26 21:22:37" number="04,07,08,19,32,33,13"><span
-                                    class="r_border">2017-034</span> <span class="qihao"><em class="red">04</em><em
+                                    class="r_border">2017-03-4</span> <span class="qihao"><em class="red">04</em><em
                                     class="red">07</em><em class="red">08</em><em class="red">19</em><em
                                     class="red">32</em><em class="red">33</em><em class="blue">13</em></span></p>
                             <p class="gray" issue="2017-033" awardt="2017-03-23 21:22:15" number="05,07,15,20,23,30,15">
-                                <span class="r_border">2017-033</span> <span class="qihao"><em class="red">05</em><em
+                                <span class="r_border">2017-03-3</span> <span class="qihao"><em class="red">05</em><em
                                     class="red">07</em><em class="red">15</em><em class="red">20</em><em
                                     class="red">23</em><em class="red">30</em><em class="blue">15</em></span></p></div>
-                    </div>
-                    <!--走势图表-->
-                    <div class="content_pub tool_links">
-                        <div class="cp_slide_nav">
-                            <label class="cp_slide_tip">走势图表</label>
-                            <a href="/staticHtml/lotterytrend/index.html" class="more">更多&gt;&gt;</a>
-                        </div>
-                        <a href="/statichtml/lotterytrend/ssq/jbzs30.html" target="_blank">双色球基本走势图</a>
-                        <a href="/statichtml/lotterytrend/ssq/daxiao30.html" target="_blank">双色球大小走势图</a>
-                        <a href="/statichtml/lotterytrend/ssq/jiou30.html" target="_blank">双色球奇偶走势图</a>
-                        <a href="/statichtml/lotterytrend/ssq/kuadu_sw30.html" target="_blank">双色球首尾跨度走势图</a>
-                        <a href="/statichtml/lotterytrend/ssq/kuadu_1230.html" target="_blank">双色球一二跨度走势</a>
-                        <a href="/statichtml/lotterytrend/ssq/kuadu_2330.html" target="_blank">双色球二三跨度走势</a>
-                        <a href="/statichtml/lotterytrend/ssq/kuadu_3430.html" target="_blank">双色球三四跨度走势</a>
-                        <a href="/statichtml/lotterytrend/ssq/kuadu_4530.html" target="_blank">双色球四五跨度走势</a>
-                        <a href="/statichtml/lotterytrend/ssq/kuadu_5630.html" target="_blank">双色球五六跨度走势</a>
-                        <a href="/statichtml/lotterytrend/ssq/chu330.html" target="_blank">双色球除3走势图</a>
-                        <a href="/statichtml/lotterytrend/ssq/hezhi30.html" target="_blank">双色球和值走势图</a>
-                        <a href="/statichtml/lotterytrend/ssq/zhihe30.html" target="_blank">双色球质和走势图</a>
-
                     </div>
                 </div>
             </div>

@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body ng-app="app">
+	<div ng-controller="parentCtrl">
+		<h3>data in parent controller:{{name}}</h3>
+		<div ng-controller="childCtrl1">
+			<h3>the controlle 1:{{name}}</h3>
+			<input type="text" ng-change="change()" ng-model="name">
+		</div>
+		<div ng-controller="childCtrl2">
+			<h3>the controler 2:{{name}}</h3>	
+			<input type="text" ng-model="name" ng-change="change()">
+		</div>
+		<div ng-controller="TestCtrl">
+			<p>{{xing}}</p>
+			<div ng-if="show">
+				<input type="text" ng-model="xing">
+			</div>
+		</div>
+		<div ng-controller="repeatCtrl">
+			<ul ng-repeat="item in items track by $index ">
+				<li >{{item}}</li>
+			</ul>
+		</div>
+	</div>
+	<script type="text/javascript">
+		angular.module('app',[])
+			.factory('Data',function(){
+				return {
+					name:'congwen'
+				}
+			})
+			.controller('parentCtrl',['$scope',function($scope){
+				$scope.name='li';
+				$scope.$on('nameChange',function(event,data){
+					$scope.name=data;
+				})
+			}])
+			.controller('childCtrl1',['$scope',function($scope){
+				$scope.change=function(){
+					$scope.$emit('nameChange',$scope.name);
+				}
+				
+			}])
+			.controller('childCtrl2',['$scope',function($scope){
+				$scope.change=function(){
+					$scope.$emit('nameChange',$scope.name);
+				}
+			}])
+			.controller('TestCtrl',['$scope',function($scope){
+				$scope.xing="li";
+				$scope.show=true;
+			}])
+			.controller('repeatCtrl',['$scope',function($scope){
+				$scope.items=[1,2,1];
+			}])
+		//
+		function Person(){
+
+		}
+		var person =new Person();
+		console.log(person.__proto__===Person.prototype);
+		function Person() {
+
+		}
+		var person = new Person();
+		console.log(person.__proto__ === Person.prototype); // true
+	</script>
+</body>
+</html>

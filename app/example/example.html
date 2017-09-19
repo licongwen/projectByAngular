@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<!--Loading jQuery-->
+	<script src="../../lib/jquery/jquery-1.9.1.min.js"></script>
+
+	<!--Loading Angular-->
+	<script src="../../lib/angular/angular.min.js"></script>
+
+	<!-- Loading Bootstrap-table -->
+	<script src="../../lib/bootstrap/bootstrap.min.js"></script>
+</head>
+<body ng-app="app">
+	<div ng-controller="childCtrl1">
+		<h3>data in child controller 1:{{data.name}}</h3>
+		<input type="text" class="form-control" ng-model="data.name">
+	</div>
+	<div ng-controller="childCtrl2">
+		<h3>data in child controller 1:{{data.name}}</h3>
+		<input type="text" class="form-control" ng-model="data.name">
+	</div>
+	<script type="text/javascript">
+		angular.module('app')
+			.factor('Data',function(){
+				return {
+					name:'htf'
+				}
+			})
+			.controller('childCtrl1',['$scope','Data',function($scope,Data){
+				
+				$scope.name=Data;
+			}])
+			.controller('childCtrl2',['$scope','Data',function($scope,Data){
+				$scope.name=Data;
+			}])
+	</script>
+</body>
+</html>

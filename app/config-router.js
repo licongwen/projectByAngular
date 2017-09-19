@@ -45,6 +45,16 @@ var app=angular.module('app')
 				}]
 			}
 		})
+		.state('main.index.work',{
+			url:'/work',
+			controller:'workController',
+			templateUrl:'app/work/work.html',
+			resolve:{
+				work:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/work/workController.js')
+				}]
+			}
+		})
 		.state('main.index.text',{
 			url:'/text',
 			templateUrl:'app/text/text.html',
