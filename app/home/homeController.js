@@ -54,13 +54,10 @@ var app=angular.module('app');
 				}
 			}
 	//双色球逻辑
-
-	let oUl=$('#BetNumberListContanior');
-
-
 	$scope.redArr=[];//接受红球的数组
 	$scope.blueArr=[];//接受蓝球的数组
-
+	
+	let oUl=$('#BetNumberListContanior');
 	let sum_red=0;//红球的数量
 	let sum_blue=0;//蓝球的数量
 	let selectedRedNumber=0;//选中的红球数量
@@ -125,6 +122,7 @@ var app=angular.module('app');
     }
 	//机选红球功能
 	$scope.randomSelectRed=function(){
+
 		$scope.redArr=[];//每次选择之前清空上次选中的红球 
 		
 
@@ -333,10 +331,9 @@ app.directive('sureToSelect',function(){
 
 	app.service('generateBall',function(){
 
-		this.redArr=[];//随机的红球数组
-		this.blueArr=[];//随机的蓝球数组
 		//产生随机红球数组
 		this.generateRed=function(){
+			this.redArr=[];
 			var arr=[];
 			for(var i=0;i<33;i++){
 				arr[i]=i+1;
@@ -350,6 +347,7 @@ app.directive('sureToSelect',function(){
 	    }
 	    //产生随机蓝球数组
 	    this.generateBlue=function(){
+	    	this.blueArr=[];
 			var arr=[];
 			for(var i=0;i<16;i++){
 				arr[i]=i+1;
