@@ -22,7 +22,7 @@
 
 <div class="wrap">
     <div id="szcpage">
-        <div class="navi ssq_banner">
+        <!-- <div class="navi ssq_banner">
             <div class="nav_logo">
             </div>
             <div class="nav_box">
@@ -38,7 +38,7 @@
                     <a href="javascript:void(0)">双色球走势图</a>
                     |<a href="javascript:void(0)">双色球玩法介绍</a></p>
             </div>
-        </div>
+        </div> -->
         <div class="lottery_wrap">
             <div class="ssq_main clear">
                 <div class="buy_single ssq">
@@ -354,8 +354,7 @@
                                                                                                class="fred">0</b> 元 </span>
                     </div>
                     <p class="sure">
-                        <input title="确认选号"  class="addbtn disabled" disabled id="addToListBtn" ng-click="SureToSelect()">
-                        <a id="clearNumberBtn" href="javascript:void(0)" ng-click="clearAll()">清空全部</a>
+                        <sure-to-select></sure-to-select>
                     </p>
                     <div class="ssq_entry">
                         <div class="selected_list">
@@ -378,15 +377,15 @@
                         </label>
                         <label for="removeAllBtn">
                             <input id="removeAllBtn" value="清空列表" class="del_all1 gray_but" name="Submit2"
-                                    type="button" ng-click="ClearAll()">
+                                    type="button" ng-click="ClearAllList()">
                         </label>
                         <div class="user_account">
-                            <span>共 <em id="totalItems">0</em> 注，</span> <span class="multiple_span" id="multipleInfo">
+                            <span>共 <em id="totalItems">{{totalNumber}}</em> 注，</span> <span class="multiple_span" id="multipleInfo">
                         <span>我要买</span>
                         <input accesskey="-" id="beiDown" class="sub_btn sub_btn_des" type="button" ng-click="beiDown()">
                         <input class="muti_input" size="5" value="1" id="multiple" type="text">
                         <input  id="beiUp" class="add_btn" type="button" ng-click="beiUp()">倍 <b class="gray">(最高限投99999倍)</b>，
-                    </span><span>合计金额 <em id="totalSum">0</em> 元</span>
+                    </span><span>合计金额 <em id="totalSum">{{totalMoney}}</em> 元</span>
                         </div>
                         <div class="clear">
                         </div>
@@ -660,7 +659,7 @@
                             <em>账户信息：</em>
                             <div id="bet_user_account">
                                 <div class="logininfo"><strong
-                                        class="logininfo_name"><b>“</b>admin123465<b>”</b></strong>，您的账户余额<span
+                                        class="logininfo_name"><b>“</b>{{account}}<b>”</b></strong>，您的账户余额<span
                                         id="useralid_money" class="fred">0.00</span> 元<a href="/member/pay"
                                                                                          target="_blank"
                                                                                          class="user_ico">[<b>账户充值</b>]</a><a
@@ -814,6 +813,7 @@
         </div>
         <div class="clearfix">
         </div>
+        <sure-to-select></sure-to-select>
     </div>
 </div>
 <div class="modal fade" id="selectTableModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >  

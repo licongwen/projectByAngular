@@ -27,6 +27,7 @@
 				<li >{{item}}</li>
 			</ul>
 		</div>
+		<hello-world></hello-world>
 	</div>
 	<script type="text/javascript">
 		angular.module('app',[])
@@ -34,6 +35,13 @@
 				return {
 					name:'congwen'
 				}
+			})
+			.directive('helloWorld',function(){
+				return {
+					restrict:'E',
+					template:'<div>i am ok</div>'
+				}
+
 			})
 			.controller('parentCtrl',['$scope',function($scope){
 				$scope.name='li';
@@ -60,16 +68,7 @@
 				$scope.items=[1,2,1];
 			}])
 		//
-		function Person(){
 
-		}
-		var person =new Person();
-		console.log(person.__proto__===Person.prototype);
-		function Person() {
-
-		}
-		var person = new Person();
-		console.log(person.__proto__ === Person.prototype); // true
 	</script>
 </body>
 </html>
