@@ -56,6 +56,8 @@ var app=angular.module('app');
 	//双色球逻辑
 	$scope.redArr=[];//接受红球的数组
 	$scope.blueArr=[];//接受蓝球的数组
+	$scope.totalNumber=0;//总的投注数
+	$scope.totalMoney=0;//总的金额
 	
 	let oUl=$('#BetNumberListContanior');
 	let sum_red=0;//红球的数量
@@ -65,9 +67,6 @@ var app=angular.module('app');
 	let needToSelectRedNumber=0;//随机红球的个数
 	let needToSelectBlueNumber=0;//随机蓝球的个数
 	let beishu=parseInt($("#multiple").val());//获取投注的倍数
-
-	$scope.totalNumber=0;//总的投注数
-	$scope.totalMoney=0;//总的金额
 
 	let sum_T=0;//总的彩票注数
 	let sum_M=0;//总的彩票钱
@@ -83,7 +82,7 @@ var app=angular.module('app');
 
 	
     //使确认选号按钮可用
-    function ableAdddBtn(){
+    function ableAddBtn(){
     	if(selectedRedNumber>=6 && selectedBlueNumber>=1){
     		$('#addToListBtn').removeClass('disabled');
         	$('#addToListBtn').removeAttr('disabled');
@@ -141,7 +140,7 @@ var app=angular.module('app');
 		}
 		selectedRedNumber=$('.active_red').length;
 		
-		ableAdddBtn();
+		ableAddBtn();
 
 	}
 	// 机选蓝球功能
@@ -163,7 +162,7 @@ var app=angular.module('app');
 		}
 		selectedBlueNumber=$('.active_blue').length;
 
-		ableAdddBtn();
+		ableAddBtn();
 
 	}
 	//单个点击红球的事件
@@ -181,7 +180,7 @@ var app=angular.module('app');
 		}
 		
 		selectedRedNumber=$('.active_red').length;
-		ableAdddBtn();
+		ableAddBtn();
 		
 	})
 	//单个点击蓝球的事件
@@ -190,7 +189,7 @@ var app=angular.module('app');
 
 		$(this).toggleClass('active_blue');
 		selectedBlueNumber=$('.active_blue').length;
-		ableAdddBtn();
+		ableAddBtn();
 		
 	})
 	//清空红球的功能
@@ -225,8 +224,6 @@ var app=angular.module('app');
 	}
 	//确认选号功能
 	$scope.SureToSelect=function(){
-
-
 		let oLi=$(
 			"<li>标准单式</li>"
 		);
@@ -312,51 +309,53 @@ var app=angular.module('app');
 		$("#multiple").val(beishu);
 		$scope.totalMoney=2*$scope.totalNumber*beishu;
 	}
-
+	//generateBall.ableAdd();
 }])
 
 app.directive('sureToSelect',function(){
-	return{
+	return {
 		restrict:"E",
+		scope:{//不能有大写
+			toselect:"&",
+			clearall:"&"
+		},
 		template:`
 				<p class="sure"> 
-					<input title="确认选号"  class="addbtn disabled" disabled id="addToListBtn" ng-click="SureToSelect()">
-					<a id="clearNumberBtn" href="javascript:void(0)" ng-click="clearAll()">清空全部
-					</a>
-				</p>
-				`
+					<input title="确认选号"  class="addbtn disabled" disabled id="addToListBtn" ng-click="toselect()">
+					<a id="clearNumberBtn" href="javascript:void(0)" ng-click="clearall()">清空全部</a>
+				</p>`
 	}
 
 })
 
-	app.service('generateBall',function(){
-
-		//产生随机红球数组
-		this.generateRed=function(){
-			this.redArr=[];
-			var arr=[];
-			for(var i=0;i<33;i++){
-				arr[i]=i+1;
-			}
-			for(var i=0;i<33;i++){
-				var rand=parseInt(Math.random()*arr.length);
-				this.redArr.push(arr[rand]);
-				arr.splice(rand,1);
-			}
-			return this.redArr;
-	    }
-	    //产生随机蓝球数组
-	    this.generateBlue=function(){
-	    	this.blueArr=[];
-			var arr=[];
-			for(var i=0;i<16;i++){
-				arr[i]=i+1;
-			}
-			for(var i=0;i<16;i++){
-				var rand=parseInt(Math.random()*arr.length);
-				this.blueArr.push(arr[rand]);
-				arr.splice(rand,1);
-			}
-			return this.blueArr;
-	    }		
-	})	
+app.service('generateBall',function(){
+	//产生随机红球数组
+	this.generateRed=function(){
+		this.redArr=[];
+		var arr=[];
+		for(var i=0;i<33;i++){
+			arr[i]=i+1;
+		}
+	for(var i=0;i<33;i++){
+			var rand=parseInt(Math.random()*arr.length);
+			this.redArr.push(arr[rand]);
+			arr.splice(rand,1);
+		}
+		return this.redArr;
+	}
+	//产生随机蓝球数组
+	this.generateBlue=function(){
+	this.blueArr=[];
+	var arr=[];
+	for(var i=0;i<16;i++){
+		arr[i]=i+1;
+	}
+	for(var i=0;i<16;i++){
+			var rand=parseInt(Math.random()*arr.length);
+			this.blueArr.push(arr[rand]);
+			arr.splice(rand,1);
+		}
+		return this.blueArr;
+	}		
+	
+})
