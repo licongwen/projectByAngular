@@ -11,7 +11,7 @@ var app=angular.module('app');
 			}
 			$('#selectTableModal').on('shown.bs.modal',function(e){
 
-				$('#password').focus(); //通过ID找到对应输入框，让其获得焦点
+				$('#password').focus(); //通过Id找到对应输入框，让其获得焦点
 
 			});
 
