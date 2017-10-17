@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Li</title>
+	<title>Licongwen</title>
 	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="lib/bootstrap-table/bootstrap-table.css">
 	<link rel="stylesheet" type="text/css" href="lib/css/bootstrap-editable.css">
@@ -40,12 +40,15 @@
 </head>
 <body data-ng-app='app' data-ng-controller='AppCtrl'>
 	<header class="header minwidth" data-ng-controller='headerControl'>
-		<a href="javascript:void(0)" class="pull-left"><img
-				src="#" height="59" alt=""></a> <a
-				href="javascript:void(0)" class="pull-left two-logo"><img
-				src="#" height="59" alt=""> </a>
 		<div class="english-ch pull-left">
-			[<a ng-class="{'active':lang==='en'}" id="english" ng-click="switchLanguage('en')">English</a>|<a ng-class="{'active':lang==='cn'}" id="chinese" ng-click="switchLanguage('cn')">中文</a>]
+ 			<div class="head">
+        		<div class="pull-right">
+	            	<a ui-sref="main.index.home">首页</a>
+	            	<a >作品</a>
+	            	<a data-toggle="modal" data-target="#selectTableModal">照片墙</a>
+        		</div>
+    		</div>
+		</div>
 		</div>
 		<div class="personal pull-right">
 			<a ng-click="goToLogin()" ui-sref='access.login'><i class="icon iconfont"  style="cursor:pointer;">&#xe602;</i>欢迎回来：{{userName
@@ -55,6 +58,13 @@
 	<div data-ui-view>
 		loading....
 	</div>
-	
+<style type="text/css">
+    .head{
+        width: 100%;
+        height:50px;
+		font-size: 16px;
+		font-family: '微软雅黑'
+    }
+</style>
 </body>
 </html>

@@ -45,13 +45,14 @@ var app=angular.module('app')
 				}]
 			}
 		})
-		.state('main.index.work',{
-			url:'/work',
-			controller:'workController',
-			templateUrl:'app/work/work.html',
+		.state('main.index.jiezhang',{
+			url:'/jiezhang',
+			templateUrl:'app/home/jiezhang.html',
+			controller:'jiezhangController',
+			params:{'totalNumber':null,'totalMoney':null},
 			resolve:{
-				work:['uiLoad',function(uiLoad){
-					return uiLoad.load('app/work/workController.js')
+				deps:['uiLoad',function(uiLoad){
+					return uiLoad.load('app/home/jiezhangController.js')
 				}]
 			}
 		})
@@ -146,18 +147,7 @@ var app=angular.module('app')
 				}]
 			}
 		})
-		//
-		.state('main.index.classtable',{
-			url:'/classtable',
-			templateUrl:'app/classtable/classtable.html',
-			controller:'classtableController',
-			resolve:{
-				deps:['uiLoad',function(uiLoad){
-					return uiLoad.load('app/classtable/classtableController.js')
-				}]
-			}
 
-		})
 }])
 .controller('headerControl',['$rootScope','$scope','$http','$translate','$state',function($rootScope,$scope,$http,$translate,$state){
 	
