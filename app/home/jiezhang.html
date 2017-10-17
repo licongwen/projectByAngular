@@ -5,21 +5,48 @@
 		border: 1px solid #ccc;
 	}
 	.wrap{
+		width: 100%;
+		height: 100%;
+		/*padding: 20px;*/
+	}
+	.title{
+		width:100%;
+		height: 60px;
+		padding: 20px;
+		border-bottom: 1px dotted #ccc;
+	}
+	.middle{
+		width:100%;
+		height: auto;
+		padding: 20px;
+		border-bottom: 1px dotted #ccc;
+	}
+	.footer{
+		width:100%;
+		height: 80px;
 		padding: 20px;
 	}
 </style>
 
 <div class="contianer">
 	<div class="wrap">
+		<div class="title">
+			<p>共<strong>{{totalNumber}}</strong>注,总金额<strong>{{totalMoney}}</strong>元</p>
+		</div>
 		
-		<p>共<strong>{{totalNumber}}</strong>注,总金额<strong>{{totalMoney}}</strong>元</p>
-
-		<p>投注列表</p>
-		<ul>
-			<li></li>
-		</ul>
-		<a class="btn btn-danger" ui-sref="main.index.home">返回</a>
-		<a class="btn btn-success" ng-click="sureToBuy()">确认购买</a>
+		<div class="middle">
+			<p>投注列表</p>
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+		<div class="footer">
+			<div class="pull-right">
+				<a class="btn btn-danger" ui-sref="main.index.home">返回</a>
+				<a class="btn btn-success" ng-click="sureToBuy()">确认购买</a>
+			</div>
+		</div>
+		
 	</div>
 	
 </div>
