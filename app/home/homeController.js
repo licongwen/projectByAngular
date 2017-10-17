@@ -315,8 +315,6 @@ var app=angular.module('app');
 
 			$state.go('main.index.jiezhang',{totalNumber:$scope.totalNumber,totalMoney:$scope.totalMoney,num:1});
 			
-			console.log($scope.totalMoney);
-			console.log($scope.totalNumber);
 		}	
 	}])
 

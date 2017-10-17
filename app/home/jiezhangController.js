@@ -1,12 +1,13 @@
 'use strict'
 
-app.controller('jiezhangController',['$scope','$stateParams','$rootScope',function($scope,$stateParams,$rootScope){
+app.controller('jiezhangController',['$scope','$http','$stateParams','$rootScope',function($scope,$http,$stateParams,$rootScope){
 	
-	$rootScope.totalNumber = $stateParams.totalNumber;
-	$rootScope.totalMoney = $stateParams.totalMoney;
+	$scope.totalNumber = $stateParams.totalNumber || 0;
+	$scope.totalMoney = $stateParams.totalMoney || 0;
 
-	$scope.li='licongwen';
-
-	console.log(123);
-
+	
+	$scope.sureToBuy = function( ){
+		alert('购买成功!');
+		console.log(1213)
+	}
 }])
